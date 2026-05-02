@@ -2,16 +2,29 @@
 
 HardwareSerial MySerial(2);
 
+#define LED_PIN 13
+
 void setup() {
-  Serial.begin(115200); // USB debug
+  Serial.begin(115200);
   MySerial.begin(9600, SERIAL_8N1, 15, 14); // RX, TX
 
-  Serial.println("Sender started");
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+
+  Serial.println("Receiver started");
 }
 
 void loop() {
-  MySerial.println("HELLO");
-  Serial.println("Sent: HELLO");
+  if (MySerial.available()) {
+    String msg = MySerial.readStringUntil('\n');
 
-  delay(1000);
+    Serial.print("Received: ");
+    Serial.println(msg);
+
+    if (msg == "HELLO") {
+      digitalWrite(LED_PIN, HIGH);
+      delay(200);
+      digitalWrite(LED_PIN, LOW);
+    }
+  }
 }
