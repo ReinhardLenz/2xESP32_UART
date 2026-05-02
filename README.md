@@ -7,6 +7,12 @@ This circuit involves the integration of two ESP32-CAM modules, a CP2102 USB to 
 
 ![Diagram](images/circuit_image.png)
 
+
+## **Connection of the programming device**
+
+![Diagram](images/esp32-cam_ftdi-connection.jpg)
+
+
 ## **Component List**
 
 1. **LED: Two Pin (red) \- Long Pins**  
