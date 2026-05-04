@@ -3,7 +3,7 @@
 HardwareSerial MySerial(2);
 
 void setup() {
-  Serial.begin(115200); // USB debug
+  Serial.begin(9600); // USB debug
   MySerial.begin(9600, SERIAL_8N1, 15, 14); // RX, TX
 
   Serial.println("Sender started");
