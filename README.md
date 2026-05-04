@@ -2,7 +2,7 @@
 
 ## **Summary of the Circuit**
 
-This circuit involves the integration of two ESP32-CAM modules, a CP2102 USB to UART bridge, a red LED, and a resistor. The circuit is designed to facilitate communication between the ESP32-CAM modules and a computer via the CP2102, while also incorporating a visual indicator using the LED. The resistor is used to limit the current through the LED.
+This circuit involves the integration of two ESP32-CAM modules, a CP2102 USB to UART bridge, a red LED, and a resistor. The circuit is designed to test and facilitate communication between the ESP32-CAM modules. Uploading the program from the computer via the CP2102. There is a visual indicator of successful communication using the LED. The resistor is used to limit the current through the LED. This repository was created with VS Code and the platform IO extension. There is a convention in platform IO extension of VS Code, when uploading the program file to the sender ESP32, you must first rename the file main_send.cpp to main.cpp, and rename the main_send.cpp to main_sendx.cppxx. The compiler tries to read and implement all .cpp and .h files  and if the cpp file type is not changed to cppxx, it will cause an error during compilation. And vice-versa, when uploading the main_receive.cpp program to the receiving ESP32, you must rename it to main.cpp and all the other files in the src folder must have the file type tag be renamed in such a way that the compiler does not "recognize" the file and thuswould  incorrectly use it for compilation. (change .h or .cpp to .xyz r .123 or any other string so that it becomes unreadable)
 
 
 ![Diagram](images/circuit_image.png)
@@ -103,6 +103,3 @@ This circuit involves the integration of two ESP32-CAM modules, a CP2102 USB to 
   * IO15 of ESP32-CAM (Module 1\)  
 * **Other pins (5V, OI12, IO2, IO1, 3V3, IO16, IO0, VCC, UOR, UOT)** are not connected in the provided net list.
 
-## **Documented Code**
-
-There is no code provided for the microcontrollers in this circuit.
